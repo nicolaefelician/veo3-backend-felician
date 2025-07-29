@@ -74,7 +74,7 @@ def predict_long_running(project_id, location, model_id):
         if model_id not in valid_models:
             return jsonify({'error': f'Invalid model ID. Must be one of: {valid_models}'}), 400
         
-        url = "https://europe-west1-aiplatform.googleapis.com/v1/projects/agile-producer-467405-b6/locations/europe-west1/publishers/google/models/veo-3.0-fast-generate-preview:predictLongRunning"
+        url = f"https://{LOCATION}-aiplatform.googleapis.com/v1/projects/{PROJECT_ID}/locations/{LOCATION}/publishers/google/models/{model_id}:predictLongRunning"
         
         headers = {
             'Authorization': f'Bearer {access_token}',
@@ -120,7 +120,7 @@ def fetch_predict_operation(project_id, location, model_id):
         if not data or 'operationName' not in data:
             return jsonify({'error': 'operationName is required'}), 400
         
-        url = "https://europe-west1-aiplatform.googleapis.com/v1/projects/agile-producer-467405-b6/locations/europe-west1/publishers/google/models/veo-3.0-fast-generate-preview:fetchPredictOperation"
+        url = f"https://{LOCATION}-aiplatform.googleapis.com/v1/projects/{PROJECT_ID}/locations/{LOCATION}/publishers/google/models/{model_id}:fetchPredictOperation"
         
         headers = {
             'Authorization': f'Bearer {access_token}',
