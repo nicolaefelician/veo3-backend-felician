@@ -74,7 +74,7 @@ def predict_long_running(project_id, location, model_id):
         if model_id not in valid_models:
             return jsonify({'error': f'Invalid model ID. Must be one of: {valid_models}'}), 400
         
-        url = f"https://{location}-aiplatform.googleapis.com/v1/projects/{project_id}/locations/{location}/publishers/google/models/{model_id}:predictLongRunning"
+        url = "https://europe-west1-aiplatform.googleapis.com/v1/projects/agile-producer-467405-b6/locations/europe-west1/publishers/google/models/veo-3.0-fast-generate-preview:predictLongRunning"
         
         headers = {
             'Authorization': f'Bearer {access_token}',
