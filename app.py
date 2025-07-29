@@ -69,7 +69,8 @@ def predict_long_running(project_id, location, model_id):
         data = request.get_json()
         if not data:
             return jsonify({'error': 'No data provided'}), 400
-        
+
+        model_id = "veo-3.0-fast-generate-001"
         valid_models = ['veo-2.0-generate-001', 'veo-3.0-generate-preview', 'veo-3.0-fast-generate-preview']
         if model_id not in valid_models:
             return jsonify({'error': f'Invalid model ID. Must be one of: {valid_models}'}), 400
@@ -115,6 +116,8 @@ def predict_long_running(project_id, location, model_id):
 def fetch_predict_operation(project_id, location, model_id):
     try:
         access_token = get_access_token()
+
+        model_id = "veo-3.0-fast-generate-001"
         
         data = request.get_json()
         if not data or 'operationName' not in data:
