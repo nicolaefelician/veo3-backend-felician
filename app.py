@@ -120,7 +120,7 @@ def fetch_predict_operation(project_id, location, model_id):
         if not data or 'operationName' not in data:
             return jsonify({'error': 'operationName is required'}), 400
         
-        url = f"https://{location}-aiplatform.googleapis.com/v1/projects/{project_id}/locations/{location}/publishers/google/models/{model_id}:fetchPredictOperation"
+        url = "https://europe-west1-aiplatform.googleapis.com/v1/projects/agile-producer-467405-b6/locations/europe-west1/publishers/google/models/veo-3.0-fast-generate-preview:fetchPredictOperation"
         
         headers = {
             'Authorization': f'Bearer {access_token}',
