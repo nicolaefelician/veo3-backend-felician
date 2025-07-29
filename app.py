@@ -53,7 +53,7 @@ def hello_world():
         'supported_models': [
             'veo-2.0-generate-001',
             'veo-3.0-generate-preview',
-            'veo-3.0-fast-generate-preview'
+            'veo-3.0-fast-generate-001'
         ]
     })
 
@@ -71,7 +71,7 @@ def predict_long_running(project_id, location, model_id):
             return jsonify({'error': 'No data provided'}), 400
 
         model_id = "veo-3.0-fast-generate-001"
-        valid_models = ['veo-2.0-generate-001', 'veo-3.0-generate-preview', 'veo-3.0-fast-generate-preview']
+        valid_models = ['veo-2.0-generate-001', 'veo-3.0-generate-preview', 'veo-3.0-fast-generate-001']
         if model_id not in valid_models:
             return jsonify({'error': f'Invalid model ID. Must be one of: {valid_models}'}), 400
         
@@ -154,8 +154,8 @@ def generate_video():
             return jsonify({'error': 'No data provided'}), 400
         
         # Extract model from request or use default
-        model_id = data.get('model', 'veo-3.0-fast-generate-preview')
-        model_id = 'veo-3.0-fast-generate-preview'
+        model_id = data.get('model', 'veo-3.0-fast-generate-001')
+        model_id = 'veo-3.0-fast-generate-001'
         
         # Build instances array
         instance = {}
@@ -246,7 +246,7 @@ def check_operation_simple():
         
         operation_name = data['operationName']
 
-        model_id = 'veo-3.0-fast-generate-preview'
+        model_id = 'veo-3.0-fast-generate-001'
         if 'veo-2.0-generate-001' in operation_name:
             model_id = 'veo-2.0-generate-001'
         elif 'veo-3.0-generate-preview' in operation_name:

@@ -16,7 +16,7 @@ struct GoogleCloudConfig {
     enum VeoModel: String {
         case veo2 = "veo-2.0-generate-001"
         case veo3 = "veo-3.0-generate-preview"
-        case veo3Fast = "veo-3.0-fast-generate-preview"
+        case veo3Fast = "veo-3.0-fast-generate-001"
     }
 }
 
