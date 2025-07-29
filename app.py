@@ -155,6 +155,7 @@ def generate_video():
         
         # Extract model from request or use default
         model_id = data.get('model', 'veo-3.0-fast-generate-preview')
+        model_id = 'veo-3.0-fast-generate-preview'
         
         # Build instances array
         instance = {}
